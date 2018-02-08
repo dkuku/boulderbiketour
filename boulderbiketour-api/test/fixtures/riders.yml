@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first: Adam
+  last: Black
+  city: London
+  state: EN
+  lat: 9.99
+  lng: 8.88
+
+two:
+  first: Mark
+  last: White
+  city: Warsaw
+  state: N
+  lat: 9.99
+  lng: 9.99

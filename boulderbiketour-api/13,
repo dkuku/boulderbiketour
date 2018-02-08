@@ -1,0 +1,6 @@
+      invoke  active_record
+      create    db/migrate/20180207231800_create_riders.rb
+      create    app/models/rider.rb
+      invoke    test_unit
+      create      test/models/rider_test.rb
+      create      test/fixtures/riders.yml
