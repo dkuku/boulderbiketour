@@ -1,7 +1,19 @@
 import React from 'react';
+import axios from 'axios';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 export default class SlogansForm extends React.Component {
+
+  addNewSlogan = () => {
+    axios.post("http://localhost:3001/api/v1/slogans", {slogan: {first: "111", last: "222", slogan: "333"}})
+      .then(response => {
+        this.setState({slogan: response.data.slogan})
+        console.log(this.state.slogan)
+    })
+    .catch(error => console.log(error))
+
+  }
+  
   render() {
     return (
       <Form>
@@ -21,7 +33,7 @@ export default class SlogansForm extends React.Component {
           <Label for="slogan">Enter your slogan</Label>
           <Input type="textarea" name="slogan" id="slogan" />
         </FormGroup>
-        <Button>Submit</Button>
+        <Button onClick={this.addNewSlogan}>Submit</Button>
       </Form>
     );
   }
