@@ -5,11 +5,10 @@ export default class Location extends Component {
   render(){
     return(
       <div>
-      dsds
+AIzaSyCIAWHNxZM9J5lty-TuwcuTEOpf0iTsGGk
       </div>
     ) 
   }
 
 }
-AIzaSyCIAWHNxZM9J5lty-TuwcuTEOpf0iTsGGk
 
