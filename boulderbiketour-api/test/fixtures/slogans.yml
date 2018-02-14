@@ -1,13 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  first: MyString
-  last: MyString
-  email: MyString
-  slogan: MyString
+  first: "First1"
+  last: "Last1"
+  email: "em@ai.l"
+  slogan: "12.345.qwe.rt"
 
-two:
-  first: MyString
-  last: MyString
-  email: MyString
-  slogan: MyString
