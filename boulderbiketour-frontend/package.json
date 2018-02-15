@@ -1,7 +1,8 @@
 {
-  "name": "boulderbiketour-frontend",
+  "name": "boulderbiketour",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "https://boulderbiketour.herokuapp.com/",
   "dependencies": {
     "axios": "^0.17.1",
     "bootstrap": "^4.0.0",

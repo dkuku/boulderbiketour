@@ -26,9 +26,9 @@ export default class TopMenu extends Component {
   }
   render(){
     return(
-      <Navbar color="faded" light toggleable>
-      <NavbarToggler right onClick={this.toggle} />
+      <Navbar color="faded" light expand="md">
       <NavbarBrand href="/">Bike Boulder Tour</NavbarBrand>
+      <NavbarToggler onClick={this.toggle} />
       <Collapse isOpen={this.state.isOpen} navbar>
       <Nav className="ml-auto" navbar>
       <NavItem>

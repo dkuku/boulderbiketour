@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 const fetch = require("isomorphic-fetch");
 const { compose, withProps, withHandlers, withStateHandlers } = require("recompose");
 const {
