@@ -14,8 +14,7 @@ export default class RidersComponent extends Component {
   componentDidMount() {
     axios.get("http://localhost:3001/api/v1/riders.json")
       .then(response => {
-        console.log(response.data)
-        this.setState({riders: response.data})
+        this.setState({riders: response.data.riders})
       })
       .catch(error => console.log(error))
   } 
@@ -33,7 +32,6 @@ export default class RidersComponent extends Component {
           </tr>
         </thead>
         <tbody>
-
         {this.state.riders.map( (rider) => {
         return (
           <RiderRow rider={rider} key={rider.id} />
