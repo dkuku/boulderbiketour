@@ -1,6 +1,5 @@
 import React from 'react';
 import SlogansForm from './components/SlogansForm'
-import SlogansConfirmation from './components/SlogansConfirmation'
 
 export default class Contest extends React.Component {
   render() {
@@ -8,7 +7,6 @@ export default class Contest extends React.Component {
       <div>
       <h1> Contest </h1>
       <SlogansForm />
-      <SlogansConfirmation />
       </div>
     );
   }
