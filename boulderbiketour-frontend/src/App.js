@@ -6,7 +6,6 @@ import Riders from './Riders';
 import Contest from './Contest';
 import Photos from './Photos';
 import TopMenu from './TopMenu';
-
 class App extends Component {
   render() {
     return (
