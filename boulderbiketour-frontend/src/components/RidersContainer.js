@@ -12,7 +12,7 @@ export default class RidersComponent extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://localhost:3001/api/v1/riders.json")
+    axios.get("http://212.8.251.135:3001/api/v1/riders.json")
       .then(response => {
         this.setState({riders: response.data.riders})
       })

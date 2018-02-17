@@ -72,7 +72,7 @@ export default class Location extends React.PureComponent {
   }
 
   componentDidMount() {
-    const url = 'http://localhost:3001/api/v1/riders.json'
+    const url = 'http://212.8.251.135:3001/api/v1/riders.json'
 
     fetch(url)
       .then(res => res.json())

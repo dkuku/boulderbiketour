@@ -9,7 +9,7 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
-const instaAddress = "https://api.instagram.com/oauth/authorize/?client_id=ea86d2a774bc4c979110dbf1c016e44e&redirect_uri=http://127.0.0.1:3000/Photos&response_type=token"
+const instaAddress = "https://api.instagram.com/oauth/authorize/?client_id=ea86d2a774bc4c979110dbf1c016e44e&redirect_uri=http://212.8.251.135:3000/Photos&response_type=token"
 
 export default class TopMenu extends Component {
   constructor(props) {

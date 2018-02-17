@@ -1,8 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import {Route} from 'react-router-dom';
-
 
 export default class SlogansForm extends React.Component {
   state = {first: '', last: '', email: '', slogan: '', modal: false};
@@ -12,7 +10,7 @@ export default class SlogansForm extends React.Component {
   redirectHome = (e) => {
      e.preventDefault();
       window.location = '/'
- } 
+ }
 
   handleSubmit = () => {
     const { first, last, email, slogan } = this.state
@@ -20,7 +18,7 @@ export default class SlogansForm extends React.Component {
   }
 
   addNewSlogan = ()  => {
-    axios.post("http://localhost:3001/api/v1/slogans", {slogan: {first: this.state.first,last: this.state.last, email: this.state.email, slogan: this.state.slogan}})
+    axios.post("http://212.8.251.135:3001/api/v1/slogans", {slogan: {first: this.state.first,last: this.state.last, email: this.state.email, slogan: this.state.slogan}})
       .then(response => {
         console.log(this.state)
         this.setState( response.data.slogan );
