@@ -4,7 +4,7 @@ import { Container, Row, Col, NavLink } from 'reactstrap';
 export default class Footer extends Component {
     render() {
         return (
-            <div class="text-center">
+            <div className="text-center">
                 <Container>  
                     <Row>
                         <Col md="4" className="p-4">

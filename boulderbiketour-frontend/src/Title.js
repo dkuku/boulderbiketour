@@ -8,7 +8,7 @@ export default class Title extends Component {
             <div>
                 {/* Dont show header on main page */}
                 {page.length > 0 &&
-                        <h1 className="display-4 my-2">{page}</h1>
+                        <h2 className="display-4 my-2">{page}</h2>
                 }
             </div>
         )
