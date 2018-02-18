@@ -33,7 +33,7 @@ export default class TopMenu extends Component {
             <Collapse className="text-center justify-content-center" isOpen={this.state.isOpen} navbar>
                 <Nav navbar>
             <NavItem>
-                <NavLink href="/">BikeBoulderTour</NavLink>
+                <NavLink href="/">BoulderBikeTour</NavLink>
             </NavItem>
             <NavItem>
                 <NavLink href={instaAddress}>Photos</NavLink>
