@@ -6,6 +6,8 @@ import Riders from './Riders';
 import Contest from './Contest';
 import Photos from './Photos';
 import TopMenu from './TopMenu';
+import Footer from './Footer';
+
 class App extends Component {
   render() {
     return (
@@ -18,6 +20,7 @@ class App extends Component {
           <Route exact component={Contest} path="/Contest"/>
           <Route exact component={Home} path="/"/>
         </Switch>
+        <Footer />
       </div>
     );
   }
