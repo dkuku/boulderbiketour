@@ -38,6 +38,18 @@ text-align: center;
   }
 }
 
+.mapNameBg {
+background-color: map-get($theme-colors, 'dark');
+border-radius: 5px;
+opacity: 0.75;
+padding: 12px;
+}
+
+.mapName {
+ font-size: 16px;
+ font-color: map-get($theme-colors, 'light');
+}
+
 .bg-dark-opaque {
   background: rgba(map-get($theme-colors, 'primary'), 0.60);
   .btn {

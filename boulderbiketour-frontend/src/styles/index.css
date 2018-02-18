@@ -6062,6 +6062,16 @@ h2, h3, h4 {
     pointer-events: none;
     background: rgba(32, 32, 32, 0.5); }
 
+.mapNameBg {
+  background-color: #202020;
+  border-radius: 5px;
+  opacity: 0.75;
+  padding: 12px; }
+
+.mapName {
+  font-size: 16px;
+  font-color: #f8f9fa; }
+
 .bg-dark-opaque {
   background: rgba(27, 32, 33, 0.6); }
   .bg-dark-opaque .btn {
