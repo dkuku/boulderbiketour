@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Container, Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 export default class SlogansForm extends React.Component {
   state = {first: '', last: '', email: '', slogan: '', modal: false};
@@ -32,7 +32,7 @@ export default class SlogansForm extends React.Component {
   render() {
     const {first, last, email, slogan } = this.state;
     return (
-      <div>
+      <Container>
       <Form>
       <FormGroup>
       <Label for="first">First Name</Label>
@@ -62,7 +62,7 @@ export default class SlogansForm extends React.Component {
       <Button color="primary" onClick={this.redirectHome} to='/' >Go Home</Button>{' '}
       </ModalFooter>
       </Modal>
-      </div>
+      </Container>
     );
   }
 }

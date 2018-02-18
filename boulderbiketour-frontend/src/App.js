@@ -6,13 +6,16 @@ import Riders from './Riders';
 import Contest from './Contest';
 import Photos from './Photos';
 import TopMenu from './TopMenu';
+import Title from './Title';
 import Footer from './Footer';
 
 class App extends Component {
-  render() {
+    
+    render() {
     return (
       <div>
       <TopMenu />
+        <Title location={this.props.location}/>
         <Switch>
           <Route exact component={Photos} path="/Photos"/>
           <Route exact component={Location} path="/Location"/>

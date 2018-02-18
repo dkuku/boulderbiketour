@@ -5,7 +5,6 @@ export default class Contest extends React.Component {
   render() {
     return (
       <div>
-      <h1> Contest </h1>
       <SlogansForm />
       </div>
     );

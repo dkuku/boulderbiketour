@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios' 
-import {Table} from 'reactstrap'
+import {Table, Container} from 'reactstrap'
 import RiderRow from './RiderRow'
 
 export default class RidersComponent extends Component {
@@ -21,6 +21,7 @@ export default class RidersComponent extends Component {
 
   render() {
     return (
+    <Container>
       <Table>
         <thead>
           <tr>
@@ -39,6 +40,7 @@ export default class RidersComponent extends Component {
       )} 
        </tbody>
       </Table>
+    </Container>
     )
   }
 }
