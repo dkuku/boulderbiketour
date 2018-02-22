@@ -6040,7 +6040,7 @@ html, body {
 body > * {
   background-position: center; }
 
-h2, h3, h4 {
+h2, h4 {
   text-align: center; }
 
 .photo-overlay {
@@ -6077,6 +6077,14 @@ h2, h3, h4 {
   .bg-dark-opaque .btn {
     border-color: #f8f9fa;
     color: white; }
+
+.tech {
+  width: auto;
+  height: 100px; }
+
+#emailForm {
+  background-color: transparent;
+  border: 1px solid white; }
 
 .btn.btn-outline-light:hover {
   color: #202020;

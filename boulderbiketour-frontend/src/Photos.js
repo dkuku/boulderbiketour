@@ -29,17 +29,17 @@ export default class Photos extends Component {
             <div>
                 { this.state.data.map( (data) => {
                     if (data.carousel_media) {
-                            return (
-                                <ImageCarousel data={data.carousel_media} />
-                            )
-                        }
+                        return (
+                            <ImageCarousel data={data.carousel_media} />
+                        )
+                    }
                     else {
                         return (
                             <Image data={data} key={data.id} />
                         )}
                 }
                 )}
-                    </div>
-                )
-                }
-                }
+            </div>
+        )
+    }
+}

@@ -11,7 +11,7 @@ body > * {
   background-position: center;
 }
 
-h2, h3, h4 {
+h2, h4 {
 text-align: center;
 
 }
@@ -58,6 +58,14 @@ padding: 12px;
   }
 }
 
+.tech {
+width: auto;
+height: 100px; 
+}
+#emailForm {
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid white;
+}
 .btn {
  &.btn-outline-light:hover {
       color: map-get($theme-colors,"dark");
