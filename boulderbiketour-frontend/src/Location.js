@@ -14,7 +14,7 @@ const MapWithAMarkerClusterer = compose(
   withProps({
     googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyAl1BhA3YpByfJQ4DImZfzcV16VxZr_1JI&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `400px` }} />,
+    containerElement: <div style={{ height: `600px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
   }),
   withHandlers({
@@ -54,8 +54,8 @@ const MapWithAMarkerClusterer = compose(
         onCloseClick={props.onToggleOpen}
         options={{ closeBoxURL: ``, enableEventPropagation: true }}
       >
-        <div style={{ backgroundColor: `yellow`, opacity: 0.75, padding: `12px` }}>
-          <div style={{ fontSize: `16px`, fontColor: `#08233B` }}>
+        <div className="mapNameBg">
+          <div className="mapName">
         {marker.first.concat(" ", marker.last)}
           </div>
         </div>
@@ -72,7 +72,7 @@ export default class Location extends React.PureComponent {
   }
 
   componentDidMount() {
-    const url = 'http://localhost:3001/api/v1/riders.json'
+    const url = 'http://212.8.251.135:3001/api/v1/riders.json'
 
     fetch(url)
       .then(res => res.json())

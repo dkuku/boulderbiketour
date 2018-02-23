@@ -1,36 +1,40 @@
-
 import React, { Component } from 'react';
-import {
-  Container,
-  Row,
-  Col,
-  Jumbotron,
-  Button
-} from 'reactstrap';
+import Countdown from './components/Countdown';
+import Sponsors from './components/Sponsors';
+import Highlights from './components/Highlights';
+import NewsletterForm from './components/NewsletterForm';
+import {Container} from 'reactstrap';
 
 export default class Home extends Component {
-  render(){
-    return(
-      <Jumbotron>
-      <Container>
-      <Row>
-      <Col>
-      <h1>Welcome to React</h1>
-      <p>
-      <Button
-      tag="a"
-      color="success"
-      size="large"
-      href="http://reactstrap.github.io"
-      target="_blank"
-      >
-      View Reactstrap Docs
-      </Button>
-      </p>
-      </Col>
-      </Row>
-      </Container>
-      </Jumbotron>
-    ) 
-  }
+    render(){
+        return(
+        <div>
+            <div className="align-items-center d-flex photo-overlay py-5 cover" style={{backgroundImage: "url(./home.jpg)"}} >
+                <div className="container">
+                    <div className="row">
+                        <div className="text-light col-lg-7 align-self-center text-lg-left text-center">
+                            <h1 className="mb-0 mt-4 display-3">BoulderBikeTour</h1>
+                            <h3 className="mb-0 mt-4">Rocky Mountains, Colorado</h3>
+                            <p className="mb-5 lead">First April 2020</p>
+                            <NewsletterForm />
+                        </div>
+                        <div className="text-light col-lg-5 p-3">
+                            <p>starts in:</p> 
+                            <Countdown />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <Container className="p-4" >
+                <h2 className="text-info">Highlights</h2>
+               <Highlights className="mx-auto"/> 
+            </Container>
+            <Container fluid className="bg-light text-dark p-4" >
+                <h2 className="text-info">Sponsors</h2>
+                <Sponsors />
+            </Container>
+        </div>
+        )
+
+    }
 }

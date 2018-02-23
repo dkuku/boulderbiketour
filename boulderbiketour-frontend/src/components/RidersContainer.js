@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios' 
-import {Table} from 'reactstrap'
+import {Table, Container} from 'reactstrap'
 import RiderRow from './RiderRow'
 
 export default class RidersComponent extends Component {
@@ -12,7 +12,7 @@ export default class RidersComponent extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://localhost:3001/api/v1/riders.json")
+    axios.get("http://212.8.251.135:3001/api/v1/riders.json")
       .then(response => {
         this.setState({riders: response.data.riders})
       })
@@ -21,6 +21,7 @@ export default class RidersComponent extends Component {
 
   render() {
     return (
+    <Container>
       <Table>
         <thead>
           <tr>
@@ -39,6 +40,7 @@ export default class RidersComponent extends Component {
       )} 
        </tbody>
       </Table>
+    </Container>
     )
   }
 }
