@@ -6,19 +6,22 @@ export default class HighlightElement extends Component {
     const divStyle = {
         borderLeft: "8px solid "+ this.props.color
     };
+        var colSize = (((1 + this.props.index) % 4 < 2) ? "col-sm-5" : "col-sm-7");
     return (
+
+        <div className="col-sm-6" >
         <a href={this.props.link}>
-            {console.log(this.props)}
          <Card inverse className="my-2">
-           <CardImg width="100%" src={this.props.image} alt={this.props.title} />
+           <CardImg src={this.props.image} alt={this.props.title} />
         <CardImgOverlay className="d-flex flex-column justify-content-end">
-            <div className="ml-2 p-2 bg-dark" style={divStyle} >
+            <div className="ml-1 p-2 bg-dark" style={divStyle} >
                 <CardTitle>{this.props.title}</CardTitle>
                 <CardText>{this.props.subtitle}</CardText>
             </div>
         </CardImgOverlay>
         </Card>
         </a>
+        </div>
     );
 };
 }

@@ -42,7 +42,7 @@ export default class Highlights extends Component {
                 link: "#",
                 image: "training.jpg"},]
         return (
-            <CardDeck>
+            <CardDeck className="row">
                 {highlights.map((element, index) => {
                     return (
                         <HighlightElement key={index} index={index} {...element} />

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {CardDeck, Card, CardImg} from 'reactstrap'
 export default class Sponsors extends React.Component {
 
     render() {
@@ -8,12 +8,11 @@ export default class Sponsors extends React.Component {
             r.keys().map((item, index) => { images.push(r(item)); return images });
             return images;
 }
-        console.log(this.props.directory)
 const images = ImportAll(require.context('../../public/technologies', false, /\.(png|jpe?g|svg)$/));
 
         return (
             <div>
-                {images.map( (image, index) => {
+            {images.map( (image, index) => {
                     return (
                         <img className="tech" src={image} alt="" key={index}/>
                     )

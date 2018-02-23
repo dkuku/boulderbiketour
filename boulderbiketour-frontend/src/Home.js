@@ -3,6 +3,7 @@ import Countdown from './components/Countdown';
 import Sponsors from './components/Sponsors';
 import Highlights from './components/Highlights';
 import NewsletterForm from './components/NewsletterForm';
+import {Container} from 'reactstrap';
 
 export default class Home extends Component {
     render(){
@@ -24,14 +25,14 @@ export default class Home extends Component {
                     </div>
                 </div>
             </div>
-            <div className="container-fluid p-4" >
+            <Container className="p-4" >
                 <h2 className="text-info">Highlights</h2>
-               <Highlights /> 
-            </div>
-            <div className="container-fluid bg-light text-dark p-4 sponsors" >
+               <Highlights className="mx-auto"/> 
+            </Container>
+            <Container fluid className="bg-light text-dark p-4" >
                 <h2 className="text-info">Sponsors</h2>
                 <Sponsors />
-            </div>
+            </Container>
         </div>
         )
 

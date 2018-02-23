@@ -6047,7 +6047,8 @@ h2, h4 {
   overflow: hidden;
   position: relative;
   /* Full height */
-  height: 100%;
+  height: 100vh;
+  display: flex;
   /* Center and scale the image nicely */
   background-repeat: no-repeat;
   background-size: cover; }
@@ -6079,8 +6080,8 @@ h2, h4 {
     color: white; }
 
 .tech {
-  width: auto;
-  height: 100px; }
+  height: 100px;
+  width: auto; }
 
 #emailForm {
   background-color: transparent;
