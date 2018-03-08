@@ -14,11 +14,18 @@ export default class Photos extends Component {
             data: []
         }
     }
+    flickrURL(){
+        return 'https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=ca3783111609d69139840916b7a01ad2&format=json&nojsoncallback=1&per_page=5'
+    }
+
+    imageURL(item) {
+            return 'http://farm' + item.farm + '.staticflickr.com/' + item.server + '/' + item.id + '_' + item.secret + '.jpg'
+    }
 
     componentDidMount() {
-        axios.get("https://api.instagram.com/v1/users/self/media/recent/?access_token=".concat(parsedHash.access_token))
+        axios.get(this.flickrURL())
             .then(response => {
-                this.setState({data: response.data.data});
+                this.setState({data: response.data.photos.photo});
             })
             .catch(error => console.log(error))
     }
@@ -28,16 +35,10 @@ export default class Photos extends Component {
         return (
             <div>
                 { this.state.data.map( (data) => {
-                    if (data.carousel_media) {
+                        console.log(this.imageURL(data))
                         return (
-                            <ImageCarousel data={data.carousel_media} />
-                        )
-                    }
-                    else {
-                        return (
-                            <Image data={data} key={data.id} />
+                            <Image url={this.imageURL(data)} key={data.id} />
                         )}
-                }
                 )}
             </div>
         )
