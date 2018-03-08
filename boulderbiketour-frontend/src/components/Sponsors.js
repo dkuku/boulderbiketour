@@ -11,7 +11,7 @@ export default class Sponsors extends React.Component {
 const images = ImportAll(require.context('../../public/technologies', false, /\.(png|jpe?g|svg)$/));
 
         return (
-            <div>
+            <div className="centered">
             {images.map( (image, index) => {
                     return (
                         <img className="tech" src={image} alt="" key={index}/>
