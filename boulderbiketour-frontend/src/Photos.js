@@ -1,21 +1,25 @@
 
 import React, { Component } from 'react';
+import InfiniteScroll from 'react-infinite-scroller';
+
 import axios from 'axios';
 import queryString from 'query-string';
+
 import Image from './components/Image';
-
-
 
 export default class Photos extends Component {
     constructor(props) {
         super(props)
             this.state = {
-                data: []
+                images: [],
+                hasMoreItems: true,
+                loadMore: true,
+                page: 1
             }
     }
 
-    flickrURL(page=1){
-        const address= "https://api.flickr.com/services/rest/?"
+    flickrURL(page){
+        const address = "https://api.flickr.com/services/rest/?"
         return address + queryString.stringify({
             page: page,
             method: "flickr.photos.search",
@@ -23,7 +27,7 @@ export default class Photos extends Component {
             api_key: 'ca3783111609d69139840916b7a01ad2',
             format: 'json',
             nojsoncallback: 1,
-            per_page: 5
+            per_page: 6
         })
     }
 
@@ -31,25 +35,39 @@ export default class Photos extends Component {
         return 'http://farm' + item.farm + '.staticflickr.com/' + item.server + '/' + item.id + '_' + item.secret + '.jpg'
     }
 
-    componentDidMount() {
-        axios.get(this.flickrURL())
+    getImages(page) {
+        axios.get(this.flickrURL(page))
             .then(response => {
-                    this.setState({data: response.data.photos.photo});
+                    var images = this.state.images
+                    response.data.photos.photo.map((image) => {
+                    images.push(image)
                     })
+            this.setState({images: images})
+            this.setState((prevState, props) => ({
+                page: prevState.page + 1
+            })); 
+            })
         .catch(error => console.log(error))
     }
 
 
 render(){
+    const loader = <div className="loader">Loading ...</div>;
+    var items = [];
+    this.state.images.map( (data, i) => {
+            items.push(
+                <Image url={this.imageURL(data)} key={i} />
+            )
+     });
+
     return (
-            <div>
-            { this.state.data.map( (data) => {
-                    console.log(this.imageURL(data))
-                    return (
-                            <Image url={this.imageURL(data)} key={data.id} />
-                           )}
-                    )}
-            </div>
+            <InfiniteScroll
+            pageStart={0}
+            loadMore={this.getImages(this.state.page)}
+            hasMore={this.state.hasMoreItems}
+            loader={loader}>
+            {items}
+            </InfiniteScroll>
            )
 }
 }
