@@ -6,5 +6,5 @@ class Slogan < ApplicationRecord
 		message: "your name is too long"  }
 	validates :slogan, length: { maximum: 50,
 		message: "slogan must be under 50 letters long" }
-	validates_email_format_of :email, :message => 'is not looking good'
+	validates_email_format_of :email, :message => 'wrong email format'
 end
