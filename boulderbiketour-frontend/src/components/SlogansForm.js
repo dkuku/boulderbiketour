@@ -32,7 +32,7 @@ export default class SlogansForm extends React.Component {
                     this.setState({modalData: "Error. Please try again"});
                     this.setState({modalRedirect: "/Contest"})
                     this.setState({modal: true})
-                    console.log(error)
+                    console.log(error.response.data)
                     }
     )}
 
