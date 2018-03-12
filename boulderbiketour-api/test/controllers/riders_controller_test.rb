@@ -14,8 +14,6 @@ class RidersControllerTest < ActionDispatch::IntegrationTest
     assert_equal("Last1", @rider1.last)
     assert_equal("City1", @rider1.city)
     assert_equal("ST1", @rider1.state)
-    assert_equal(9.99, @rider1.lat)
-    assert_equal(8.88, @rider1.lng)
   end
   
 #  test "should create rider" do

@@ -10,8 +10,8 @@ puts "created riders from csv file"
 
 5.times do |slogan|
   Slogan.create!(
-    first: "name#{slogan}",
-    last: "surname#{slogan}",
+    first: "name",
+    last: "surname",
     email: "email#{slogan}@serv.com",
     slogan: "lorem ipsum dolor #{slogan}"
   )
