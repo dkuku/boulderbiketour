@@ -34,7 +34,7 @@ render(){
             <NavLink href="/">BoulderBikeTour</NavLink>
             </NavItem>
             <NavItem>
-            <NavLink href='/Photos'}>Photos</NavLink>
+            <NavLink href='/Photos'>Photos</NavLink>
             </NavItem>
             <NavItem>
             <NavLink href="/Location">Location</NavLink>
