@@ -7,11 +7,15 @@ module Api::V1
 
     def create
       @slogan = Slogan.create(slogan_params)
-      render json: @slogan
+      if @slogan.save
+		render json: @slogan
+	  else
+		render json: @slogan.errors, status: :bad_request
+	  end
     end
 
     private
-  
+
     def slogan_params
       params.require(:slogan).permit(:first, :last, :email, :slogan)
     end
