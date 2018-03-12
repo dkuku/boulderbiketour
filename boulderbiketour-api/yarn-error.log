@@ -1,0 +1,32 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js del react-instagram-ligin
+
+PATH: 
+  /home/afterclassrooms/.rvm/gems/ruby-2.4.1/bin:/home/afterclassrooms/.rvm/gems/ruby-2.4.1@global/bin:/home/afterclassrooms/.rvm/rubies/ruby-2.4.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/home/afterclassrooms/.rvm/bin
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  9.7.1
+
+Platform: 
+  linux x64
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Couldn't find a package.json file in "/home/afterclassrooms/boulderbiketour/boulderbiketour-api"
+      at new MessageError (/usr/share/yarn/lib/cli.js:186:110)
+      at /usr/share/yarn/lib/cli.js:40048:15
+      at Generator.next (<anonymous>)
+      at step (/usr/share/yarn/lib/cli.js:98:30)
+      at /usr/share/yarn/lib/cli.js:109:13
+      at <anonymous>

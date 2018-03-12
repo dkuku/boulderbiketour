@@ -1,8 +1,0 @@
-      invoke  active_record
-      create    db/migrate/20180207231914_create_riders.rb
-   identical    app/models/rider.rb
-      invoke    test_unit
-   identical      test/models/rider_test.rb
-    conflict      test/fixtures/riders.yml
-    Overwrite /home/kuku/Openclassroms/project7/boulderbiketour-api/test/f[Kiixtures/riders.yml? (enter "h" for help) [Ynaqdh] 
-       force      test/fixtures/riders.yml
