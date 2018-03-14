@@ -6092,3 +6092,9 @@ h2, h4 {
 
 .modal-title {
   color: black; }
+
+.loader {
+  clear: both; }
+
+.photoGrid {
+  text-align: center; }

@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
-
+import {Row} from 'reactstrap';
 import axios from 'axios';
 import queryString from 'query-string';
 
@@ -10,6 +10,8 @@ import Image from './components/Image';
 export default class Photos extends Component {
     constructor(props) {
         super(props)
+        this.flickrURL = this.flickrURL.bind(this)
+        this.getImages = this.getImages.bind(this)
             this.state = {
                 images: [],
                 hasMoreItems: true,
@@ -18,7 +20,7 @@ export default class Photos extends Component {
             }
     }
 
-    flickrURL(page){
+    flickrURL(page) {
         const address = "https://api.flickr.com/services/rest/?"
         return address + queryString.stringify({
             page: page,
@@ -55,19 +57,22 @@ render(){
     const loader = <div className="loader">Loading ...</div>;
     var items = [];
     this.state.images.map( (data, i) => {
-            items.push(
-                <Image url={this.imageURL(data)} key={i} />
-            )
-     });
+        items.push(
+        <Image url={this.imageURL(data)} key={i} />
+        )
+    })
 
     return (
+            <Row className="photoGrid">
             <InfiniteScroll
             pageStart={0}
-            loadMore={this.getImages(this.state.page)}
+            initialLoad={true}
+            loadMore={this.getImages}
             hasMore={this.state.hasMoreItems}
             loader={loader}>
             {items}
             </InfiniteScroll>
+            </Row>
            )
 }
 }
