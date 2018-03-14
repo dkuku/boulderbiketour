@@ -10,7 +10,7 @@ module Api::V1
       if @slogan.save
 		render json: @slogan
 	  else
-		render json: @slogan.errors, status: :bad_request
+		render json: @slogan.errors.full_messages, status: :bad_request
 	  end
     end
 

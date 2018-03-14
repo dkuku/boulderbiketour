@@ -3,13 +3,16 @@ import axios from 'axios';
 import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 export default class SlogansForm extends React.Component {
-    state = {first: '', last: '', email: '', slogan: '', modal: false, modalData: '', modalHeader: '', modalRedirect: '/'};
+    state = {first: '', last: '', email: '', slogan: '', modal: false, modalData: '', modalHeader: '', modalButton: ""};
 
     handleChange = (e: Object) => this.setState({ [e.target.name]: e.target.value });
 
     redirectHome = (e) => {
         e.preventDefault();
-        window.location = this.state.modalRedirect
+        window.location = "/"
+    }
+    hideModal = (e) => {
+        this.setState({modal: false})
     }
 
     handleSubmit = () => {
@@ -24,13 +27,13 @@ export default class SlogansForm extends React.Component {
                     if (response.status === 200){
                     this.setState({modalHeader: `Your slogan was submitted`});}
                     this.setState({modalData: `Hi ${first} ${last}. Your slogan " ${slogan} " was saved to the database. We let you know about the contest to your email address ${email}`});
-                    this.setState({modalRedirect: '/'})
+                    this.setState({modalButton: this.redirectHome})
                     this.setState({modal: true})
                     })
     .catch(error => {
                     this.setState({modalHeader: `Error`});
-                    this.setState({modalData: "Error. Please try again"});
-                    this.setState({modalRedirect: "/Contest"})
+                    this.setState({modalData: error.response.data[0] || "There was an error submitting the form, please try again in 5 minutes"});
+                    this.setState({modalButton: this.hideModal})
                     this.setState({modal: true})
                     console.log(error.response.data)
                     }
@@ -43,15 +46,15 @@ export default class SlogansForm extends React.Component {
                 <Form>
                 <FormGroup>
                 <Label for="first">First Name</Label>
-                <Input type="" name="first" id="first" placeholder="Jon" value={first} onChange={this.handleChange}/>
+                <Input type="" name="first" placeholder="Jon" id="first" value={first} onChange={this.handleChange}/>
                 </FormGroup>
                 <FormGroup>
-                <Label for="last">Email</Label>
-                <Input type="" name="last" id="last" placeholder="Snow" value={last} onChange={this.handleChange}/>
+                <Label for="last">Last Name</Label>
+                <Input type="" name="last" placeholder="Snow" id="last" value={last} onChange={this.handleChange}/>
                 </FormGroup>
                 <FormGroup>
                 <Label for="Email">Email</Label>
-                <Input type="email" name="email" id="Email" placeholder="email@server.com" value={email} onChange={this.handleChange} />
+                <Input type="email" name="email" id="email" placeholder="email@server.com" value={email} onChange={this.handleChange} />
                 </FormGroup>
                 <FormGroup>
                 <Label for="slogan">Enter your slogan</Label>
@@ -66,7 +69,7 @@ export default class SlogansForm extends React.Component {
                 {this.state.modalData}
         </ModalBody>
             <ModalFooter>
-            <Button color="primary" onClick={this.redirectHome} >OK</Button>{' '}
+            <Button color="primary" onClick={this.state.modalButton} >OK</Button>{' '}
         </ModalFooter>
             </Modal>
             </div>
