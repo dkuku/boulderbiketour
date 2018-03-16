@@ -14,7 +14,7 @@ const images = ImportAll(require.context('../../public/technologies', false, /\.
             <div className="centered">
             {images.map( (image, index) => {
                     return (
-                        <img className="tech" src={image} alt="" key={index}/>
+                        <img className="tech pr-2" src={image} alt={image} key={index}/>
                     )
                 })}
             </div>
