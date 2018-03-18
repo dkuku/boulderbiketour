@@ -6,7 +6,6 @@ export default class HighlightElement extends Component {
     const divStyle = {
         borderLeft: "8px solid "+ this.props.color
     };
-        var colSize = (((1 + this.props.index) % 4 < 2) ? "col-sm-5" : "col-sm-7");
     return (
 
         <div className="col-sm-6" >

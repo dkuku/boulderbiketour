@@ -1,5 +1,4 @@
 import React from 'react';
-import {CardDeck, Card, CardImg} from 'reactstrap'
 export default class Sponsors extends React.Component {
 
     render() {

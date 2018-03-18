@@ -22,7 +22,7 @@ export default class SlogansForm extends React.Component {
 
     addNewSlogan = ()  => {
         const { first, last, email, slogan } = this.state
-        axios.post("http://212.8.251.135:3001/api/v1/slogans", {slogan: {first: first,last: last, email: email, slogan: slogan}})
+        axios.post("https://boulderbiketour.herokuapp.com/api/v1/slogans", {slogan: {first: first,last: last, email: email, slogan: slogan}})
             .then(response => {
                     if (response.status === 200){
                     this.setState({modalHeader: `Your slogan was submitted`});}
